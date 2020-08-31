@@ -6,47 +6,39 @@
 </head>
 <body>
 
+<?php
+ini_set('display_errors' , 1);
+ 
+  $aryWeek = ['日','月','火','水','木','金','土'];
+  $dateTime = new DateTime();
+  $year = $dateTime->format('Y');
+  $month = $dateTime->format('m');
+  $end_month = $dateTime->format('t');
 
-
-
-
-
-
-<form action="" method="post">
-  <input type="time" name="time1">
-  <input type="time" name="time2">
-  <input type="submit" value="送信">
-  </form>
+  $aryCalendar = [];
   
-
-
-<?php 
-
-$time1 = filter_input(INPUT_POST, 'time1');
-$time2 = filter_input(INPUT_POST, 'time2');
-
-$t1 = new DateTime($time1);
-$t2 = new DateTime($time2);
-
-$interval = $t1->diff($t2);
-
-$interval = $interval->format('%H:%I');
-
-if($interval !== '00:00' || null){  
-  echo $interval;
-}
-
+  for ($i = 1; $i <= $end_month; $i++){
+    $aryCalendar[$i]['day'] = $i;
+    $s = sprintf('%02d', $i);
+    $week = new DateTime($year.'-'.$month.'-'.$s);
+    $w = $week->format('w');
+    $aryCalendar[$i]['week']= $w;      
+  } 
+     
 ?>
 
-
-
-
-
-
-
-
-
-
+<table class="calender">
+  <?php
+  foreach ($aryCalendar as $value){ 
+  ?> 
+  <tr class=>
+  <td>
+    <?= $value['day']; ?> (<?= $aryWeek[$value['week']]; ?>) 
+  </td>    
+  <?php } ?>
+  <?php require('../time_manager/functions.php'); ?>
+ </tr>
+</table>
 
 </body>
 </html>
