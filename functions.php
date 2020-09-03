@@ -1,9 +1,3 @@
-<form action="" method="post">
-    <input type="time" name="time1">
-    <input type="time" name="time2">
-    <input type="submit" value="送信">
-    </form>
-    
   <?php 
 
   $time1 = filter_input(INPUT_POST, 'time1');
@@ -16,8 +10,12 @@
 
   $interval = $interval->format('%H:%I');
 
-  if($interval !== '00:00' || null){  
-    echo $interval;
+  function interval($interval)
+  {  
+    if ($interval !== '00:00' || null){
+      echo $interval;
+     }
   }
+  
 
   ?>

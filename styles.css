@@ -1,0 +1,64 @@
+.calendar {
+  width:80%;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+.calendar caption {
+ font-weight: bold;
+ margin-bottom: 5px;
+}
+
+.calendar th {
+  border: 1px solid #ccc;
+  padding: 5px;
+  background-color: #88ff88;
+}
+
+.calendar td { 
+  padding: 5px;
+  border: 1px solid #ccc;
+  
+}
+
+.calendar tr.week0 {
+  background-color:#ffecec;
+  color:#ff0000;
+  
+}
+
+.calendar tr.week6 {
+  background-color:#ececff;
+  color:#0000ff;
+}
+
+.calendar td:first-child{
+  width: 20%;
+  text-align: center;
+}
+
+.calendar td:last-child{
+  width: 20%;
+  text-align: center;
+}
+
+.timebutton1{
+  width:80px;
+  font-size:15px;
+  border: 3px inset #00ccff;
+  background-color: #ccffff;
+  
+}
+
+.timebutton2{
+  width:80px;
+  font-size:15px;
+  border: 3px inset #00ccff;
+  background-color: #ccffff;
+}
+
+.submitbutton{
+  width:80px;
+  font-size:20px;
+  background-color:#eee;
+}
