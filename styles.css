@@ -18,13 +18,11 @@
 .calendar td { 
   padding: 5px;
   border: 1px solid #ccc;
-  
 }
 
 .calendar tr.week0 {
   background-color:#ffecec;
   color:#ff0000;
-  
 }
 
 .calendar tr.week6 {

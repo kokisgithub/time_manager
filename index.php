@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -9,7 +10,7 @@
 
 <?php
 ini_set('display_errors' , 1);
- 
+
   $aryWeek = ['日','月','火','水','木','金','土'];
   $dateTime = new DateTime();
   $year = $dateTime->format('Y');
@@ -27,7 +28,6 @@ ini_set('display_errors' , 1);
   } 
   
 ?>
-<?php require('../time_manager/functions.php'); ?>
 
 <table class="calendar">
   <caption><?= $year."年".$month."月" ?></caption>
@@ -43,25 +43,33 @@ ini_set('display_errors' , 1);
     if($value['week'] == 0){?>
   <tr class= "week0">
   <?php }elseif($value['week'] == 6){ ?>
-  <tr class= "week6">
-  <?php } ?> 
-  <td>
-    <?= $value['day']; ?> (<?= $aryWeek[$value['week']]; ?>) 
-  </td>
+    <tr class= "week6">
+      <?php } ?> 
+      <td>
+        <?= $value['day']; ?> (<?= $aryWeek[$value['week']]; ?>) 
+      </td>
   
   <form action="" method="post">
     <td>
-    <div style="text-align:center;"><input type="time" name="time1" class="timebutton1"></div>    
+      <div style="text-align:center;"><input type="time" name="start<?= $value['day']; ?>" class="timebutton1"></div>    
     </td>
     <td>
-    <div style="text-align:center;"><input type="time" name="time2" class="timebutton2"></div>
+      <div style="text-align:center;"><input type="time" name="end<?= $value['day']; ?>" class="timebutton2"></div>
     </td>    
     <td>
-    <div style="text-align:center;"><input type="submit" value="確定" class="submitbutton"></div>
-  </td>     
-</form>
+      <div style="text-align:center;"><input type="submit"  value="確定" name="submit<?= $value['day'] ?>" class="submitbutton">
+      </div>
+    </td>     
+  </form>
+
+  <?php require('../time_manager/time.php'); ?>
+
     <td>
-      <?php interval($interval); ?>
+      <?php
+       if ($interval !== '00:00' || null)
+       {
+        echo $interval;
+        }?>
     </td>
   </tr>
   <?php } ?>
