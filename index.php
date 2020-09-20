@@ -13,9 +13,9 @@ ini_set('display_errors' , 1);
 
 require('../time_manager/functions.php');
 
-  $aryWeek = ['日','月','火','水','木','金','土'];
-  $dateTime = new DateTime();
-  $year = $dateTime->format('Y');
+$aryWeek = ['日','月','火','水','木','金','土'];
+$dateTime = new DateTime();
+$year = $dateTime->format('Y');
   $month = $dateTime->format('n');
   $end_month = $dateTime->format('t');
 
@@ -29,7 +29,7 @@ require('../time_manager/functions.php');
     $aryCalendar[$i]['week']= $w;      
   } 
   
-?>
+  ?>
 
 <table class="calendar">
   <caption><?= h($year)."年 ".h($month)."月" ?></caption>
@@ -51,7 +51,8 @@ require('../time_manager/functions.php');
         <?= h($value['day']); ?> (<?= h($aryWeek[$value['week']]); ?>) 
       </td>
   
-<?php require('../time_manager/time.php'); ?>
+  <?php require('../time_manager/time.php'); ?>
+
   <form action="" method="post" >
     <td>
       <div style="text-align:center;"><input type="time" name="start<?= h($value['day']); ?>" class="timebutton1" required></div>    
@@ -67,11 +68,7 @@ require('../time_manager/functions.php');
 
 
     <td>
-      <?php
-          if ($interval !== '00:00' || null){
-            echo h($interval);
-          }
-      ?>
+      <?= h($diff);?>
     </td>
   </tr>
   <?php } ?>

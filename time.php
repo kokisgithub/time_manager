@@ -15,9 +15,8 @@
   $t2 = new DateTime($time2);
 
   $interval = $t1->diff($t2);
-  $interval = $interval->format('%H:%I');
+  $diff = $interval->format('%H:%I');
 
+  $diff = $diff !== '00:00' || null ? $diff : null; 
   
-
- 
   ?>
