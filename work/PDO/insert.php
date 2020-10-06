@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>TIME MANAGER-登録確認</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
 <?php
 
 ini_set('display_errors' , 1);
@@ -25,3 +34,9 @@ try {
 }
 
 $dbh = null;
+?>
+
+<p><a href="/time_manager/work/index.php">入力フォーム</a></p>
+
+</body>
+</html>

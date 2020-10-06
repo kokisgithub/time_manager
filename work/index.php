@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>TIME MANAGER</title>
+  <title>TIME MANAGER-入力フォーム</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,11 +16,11 @@ $dateTime = new DateTime();
 $year = $dateTime->format('Y');
 $month = $dateTime->format('n');
 $date = $dateTime->format('d');
-$end_month = $dateTime->format('t');
+// $end_month = $dateTime->format('t');
 ?>
 
 <div style="text-align:center"><caption><?= h($year)."年 ".h($month)."月" ?></caption></div>
-<form action="../PDO/PDO.php" method="post" >
+<form action="../work/PDO/insert.php" method="post" >
   <table class="button" align="center">
     <tr>
       <th>日付</th>
@@ -47,6 +47,7 @@ $end_month = $dateTime->format('t');
   </table>
 </form>
 
+<p><a href="/time_manager/work/PDO/result.php">登録内容確認</a></p>
 
 </body>
 </html>
