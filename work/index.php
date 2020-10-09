@@ -16,7 +16,6 @@ $dateTime = new DateTime();
 $year = $dateTime->format('Y');
 $month = $dateTime->format('n');
 $date = $dateTime->format('d');
-// $end_month = $dateTime->format('t');
 ?>
 
 <div style="text-align:center"><caption><?= h($year)."年 ".h($month)."月" ?></caption></div>
