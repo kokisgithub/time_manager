@@ -18,7 +18,7 @@ $dsn = 'mysql:dbname=manager;host=localhost;charset=utf8mb4';
 
 try {
   $pdo = new PDO($dsn, $user, $password);
-  $sql = "SELECT * FROM testtable";
+  $sql = "SELECT * FROM testtable ORDER BY learning_date";
 
   $sth = $pdo -> prepare($sql);
   $sth -> execute();
