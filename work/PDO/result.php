@@ -18,7 +18,7 @@ $dsn = 'mysql:dbname=manager;host=localhost;charset=utf8mb4';
 
 try {
   $pdo = new PDO($dsn, $user, $password);
-  $sql = "SELECT * FROM testtable ORDER BY learning_date";
+  $sql = "SELECT id, TIME_FORMAT(learning_time, '%H:%i'), learning_date FROM testtable ORDER BY learning_date";
 
   $sth = $pdo -> prepare($sql);
   $sth -> execute();
@@ -50,7 +50,7 @@ foreach($rows as $r){
 ?>
 <tr>
   <td><?= h($r['learning_date']); ?></td>
-  <td><?= h($r['learning_time']); ?></td>
+  <td><?= h($r["TIME_FORMAT(learning_time, '%H:%i')"]); ?></td>
   <td>
   <form action="../PDO/delete.php" method="post" >
   <button name="delete_id" value="<?= h($r['id']); ?>">削除</button>
