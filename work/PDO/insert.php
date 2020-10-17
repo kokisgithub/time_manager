@@ -20,11 +20,13 @@ require('../PDO/time.php');
 try {
   $pdo = new PDO($dsn, $user, $password);
   echo '登録しました。<br>';
-  $sql = "INSERT INTO testtable (learning_date,learning_time) VALUES (:learning_date, :learning_time)";
+  $sql = "INSERT INTO testtable (learning_date, start_time, end_time, learning_time) VALUES (:learning_date, :start_time, :end_time, :learning_time)";
 
   $sth = $pdo -> prepare($sql);
   
   $sth -> bindValue(':learning_date', $learning_date);
+  $sth -> bindValue(':start_time', $time1);
+  $sth -> bindValue(':end_time', $time2);
   $sth -> bindValue(':learning_time', $diff);
 
   $sth -> execute();
