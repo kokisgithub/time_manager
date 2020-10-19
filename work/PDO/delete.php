@@ -36,8 +36,8 @@ $dbh = null;
 
 ?>
 
-<p><a href="/time_manager/work/PDO/result.php">登録内容確認</a></p>
-<p><a href="/time_manager/work/index.php">入力フォーム</a></p>
+<div style="text-align:center"><p><a href="/time_manager/work/PDO/result.php">登録内容確認</a></p></div>
+<div style="text-align:center"><p><a href="/time_manager/work/index.php">入力フォーム</a></p></div>
 
 </body>
 </html>

@@ -18,9 +18,9 @@ $month = $dateTime->format('n');
 $date = $dateTime->format('d');
 ?>
 
+<table class="button" align="center">
 <div style="text-align:center"><caption><?= h($year)."年 ".h($month)."月" ?></caption></div>
 <form action="../work/PDO/insert.php" method="post" >
-  <table class="button" align="center">
     <tr>
       <th>日付</th>
       <th>開始時間</th>
@@ -46,7 +46,9 @@ $date = $dateTime->format('d');
   </table>
 </form>
 
-<p><a href="/time_manager/work/PDO/result.php">登録内容確認</a></p>
+</table>
+
+<div style="text-align:center"><p><a href="/time_manager/work/PDO/result.php">登録内容確認</a></p></div>
 
 </body>
 </html>
