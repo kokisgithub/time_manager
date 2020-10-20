@@ -1,12 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>TIME MANAGER-登録内容</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style type=text/css>
+    div#main {
+        padding:30px;
+        background-color: #efefef;
+        align:center;
+        text-align:center;
+    }
+    </style>
+    <title>TIME MANAGER-登録内容</title>
+  </head>
+  <body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <div class="container">
+    <div id="main">
 <?php
 
 ini_set('display_errors' , 1);
@@ -32,8 +52,8 @@ try {
   $monthly = $sth->fetchAll(PDO::FETCH_ASSOC);
   ?>
 
-  <div style="text-align:center"><caption>月別</caption></div>
-  <div style="margin-bottom:auto; text-align:center"><table border="1" style="border-collapse: collapse" align="center"></div>
+  <h3 class="bg-dark text-light">月別</h3>
+  <table class="table table-striped">
   <tr>
   <th>月</th>
   <th>合計時間</th>
@@ -74,8 +94,8 @@ $row_count = $sth->rowCount();
 $dbh = null;
 ?>
 
-<div style="text-align:center"><caption>総合</caption></div>
-<div style="margin-bottom:auto; text-align:center"><table border='1' style="border-collapse: collapse" align="center"></div>
+<h3 class="bg-dark text-light mt-1">総合</h3>
+<table class="table table-striped">
 <tr>
 <th>合計</th>
 <th>登録件数</th>
@@ -86,8 +106,8 @@ $dbh = null;
 </tr>
 </table>
 
-<div style="text-align:center"><caption>登録内容</caption></div>
-<div style="text-align:center"><table border='1' style="border-collapse: collapse" align="center"></div>
+<h3 class="bg-dark text-light mt1">登録内容</h3>
+<table class="table table-striped">
 <tr>
 <th>日</th>
 <th>開始</th>
@@ -110,7 +130,7 @@ foreach($row as $r){
   <td><?= h($r['learning_time']); ?></td>
   <td>
   <form action="../PDO/delete.php" method="post" >
-  <button name="delete_id" value="<?= h($r['id']); ?>">削除</button>
+  <button class="btn btn-danger" name="delete_id" value="<?= h($r['id']); ?>">削除</button>
   </form>
   </td>
 </tr>
@@ -120,7 +140,8 @@ foreach($row as $r){
 ?>
 </table>
 
-<div style="text-align:center"><p><a href="/time_manager/work/index.php">入力フォーム</a></p></div>
-
+<p><a href="/time_manager/work/index.php">入力フォーム</a></p>
+  </div>
+</div>
 </body>
 </html>
