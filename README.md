@@ -1,8 +1,8 @@
 # TIME_MANAGER
 
-<h2>PHPとMySQLで学習時間や練習時間などを記録して管理するアプリを作成。</h2>
+<h3>PHPとMySQLで学習時間や練習時間などを記録して管理するアプリを作成。</h3>
 <br>
-<h3>-バージョン-</h3>
+<h5>-バージョン-</h5>
 
 ・PHP 7.2.24
 
@@ -11,7 +11,7 @@
 ・Bootstrap 4.5.0
 
 <br>
-<h3>-開発環境-</h3>
+<h5>-開発環境-</h5>
 
 ・VMware Workstation 15 Player
 
