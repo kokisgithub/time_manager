@@ -18,7 +18,7 @@ function validateToken()
     empty($_SESSION['token']) ||
     $_SESSION['token'] !== filter_input(INPUT_POST,'token')  
   ){
-    exit('Invalid post request');
+    exit('不正なアクセス:もう一度やり直してください');
   } 
 }
 
