@@ -4,15 +4,15 @@
 <br>
 <h5>-バージョン-</h5>
 
-・PHP 7.2.24
+・PHP 7.2
 
-・MySQL 8.0.17
+・MySQL 8.0
 
-・Bootstrap 4.5.0
+・Bootstrap 4.5
 
 <br>
 <h5>-開発環境-</h5>
 
 ・VMware Workstation 15 Player
 
-・CentOS 8.2.2004
+・CentOS 8.2
